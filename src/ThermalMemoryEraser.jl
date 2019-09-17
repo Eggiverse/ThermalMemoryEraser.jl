@@ -17,6 +17,6 @@ include("configuration.jl")
 export Configuration
 
 include("ensemble.jl")
-export Ensemble, workheatlist, erasure_rate, loadparas
+export Ensemble, workheatlist, erasure_rate, loadparas, save_ensemble, load_ensemble
 
 end # module
