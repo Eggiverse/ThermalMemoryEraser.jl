@@ -1,5 +1,7 @@
 import YAML
 import Base.+
+import JLD2
+
 struct Ensemble{T <: AbstractForce}
     nsample :: Integer
     force :: T
@@ -44,4 +46,13 @@ function loadparas(filename="para.yml")
         paras = YAML.load(file)
     end
     paras
+end
+
+function save_ensemble(ens::Ensemble, filename)
+    @JLD2.save filename ens
+end
+
+function load_ensemble(filename)::Ensemble
+    @JLD2.load filename ens
+    return ens
 end

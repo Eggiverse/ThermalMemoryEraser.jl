@@ -16,7 +16,7 @@ function save_configuration(conf::Configuration, filename)
     @JLD2.save filename conf
 end
 
-function load_configuration(conf::Configuration, filename)
+function load_configuration(filename)::Configuration
     @JLD2.load filename conf
     return conf    
 end
