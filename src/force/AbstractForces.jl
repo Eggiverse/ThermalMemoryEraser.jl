@@ -1,13 +1,13 @@
-using Flux:Tracker
+import Zygote
 
 abstract type AbstractForce end
 
 function potential(f::AbstractForce, x::Real, t::Real)::Real end
 
 function total_force(f::AbstractForce, x::Real, t::Real)::Real
-    #@info "You are using AD"
+    @debug "You are using AD"
     px = p->potential(f, p, t)
-    g = Tracker.gradient(px, x)[1]
+    g = Zygote.gradient(px, x)[1]
     - g.data
 end
 

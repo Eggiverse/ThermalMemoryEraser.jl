@@ -1,5 +1,10 @@
+module Trajectories
+
+using ..UpdateMethods
+
 import Base:push!, length
 
+export Trajectory, heun_fill, heun_fill!
 mutable struct Trajectory
     t::Vector{<:Real}
     x::Vector{<:Real}
@@ -36,3 +41,7 @@ end
 function heun_fill(x0::Real, h::Heun, f::Function, trange::Tuple{T, T})::Trajectory where T<:Real
     heun_fill!(Trajectory([trange[1]],[x0]), h, f, trange)
 end
+
+end
+
+

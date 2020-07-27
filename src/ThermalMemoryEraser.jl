@@ -4,19 +4,19 @@ using Reexport
 include("force/Forces.jl")
 @reexport using .Force
 
-include("heun.jl")
-export Heun, heun_update
+include("update_methods.jl")
+@reexport using .UpdateMethods
 
 include("Trajectories.jl")
-export Trajectory, heun_fill, heun_fill!
+@reexport using .Trajectories
 
-include("workheat.jl")
-export WorkHeat, get_workheat
+include("metrics.jl")
+@reexport using .Metrics
 
 include("configuration.jl")
-export Configuration
+@reexport using .Configurations
 
 include("ensemble.jl")
-export Ensemble, workheatlist, erasure_rate, loadparas, save_ensemble, load_ensemble
+@reexport using .Ensembles
 
 end # module

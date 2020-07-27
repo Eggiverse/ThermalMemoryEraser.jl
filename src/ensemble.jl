@@ -1,6 +1,14 @@
+module Ensembles
+
+export Ensemble, workheatlist, erasure_rate, loadparas, save_ensemble, load_ensemble
+
 import YAML
 import Base.+
 import JLD2
+
+using ..Force
+using ..UpdateMethods
+using ..Configurations
 
 struct Ensemble{T <: AbstractForce}
     nsample :: Integer
@@ -55,4 +63,6 @@ end
 function load_ensemble(filename)::Ensemble
     @JLD2.load filename ens
     return ens
+end
+
 end

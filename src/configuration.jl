@@ -1,4 +1,13 @@
+module Configurations
+
 import JLD2
+
+using ..Trajectories
+using ..Metrics
+using ..Force
+using ..UpdateMethods
+
+export Configuration
 
 struct Configuration
     traj :: Trajectory
@@ -19,4 +28,6 @@ end
 function load_configuration(filename)::Configuration
     @JLD2.load filename conf
     return conf    
+end
+
 end
