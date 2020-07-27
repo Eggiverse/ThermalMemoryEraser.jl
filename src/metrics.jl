@@ -1,6 +1,7 @@
 module Metrics
 
 using ..Trajectories
+using ..Trajectories:genrate_v!
 using ..Force
 
 export WorkHeat, get_workheat
