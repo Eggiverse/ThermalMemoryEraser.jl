@@ -9,6 +9,7 @@ import JLD2
 using ..Force
 using ..UpdateMethods
 using ..Configurations
+using ..Trajectories: lastx
 
 struct Ensemble{T <: AbstractForce}
     nsample :: Integer

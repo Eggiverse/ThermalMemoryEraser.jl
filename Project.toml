@@ -1,7 +1,7 @@
 name = "ThermalMemoryEraser"
 uuid = "a250fca7-0f4e-4e01-a4c5-f62a11affcf8"
 authors = ["St Z <abczst@outlook.com>"]
-version = "0.3.2"
+version = "0.3.3"
 
 [deps]
 FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"

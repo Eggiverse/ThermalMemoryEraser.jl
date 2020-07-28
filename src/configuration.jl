@@ -14,9 +14,9 @@ struct Configuration
     workheat :: WorkHeat
 end
 
-function Configuration(x0::Real, f::AbstractForce, h::Heun)
+function Configuration(x0::Real, f::AbstractForce, h::Heun, τ::Real)
     t0 = 0.0
-    traj = heun_fill(x0, h, (p, t) -> total_force(f, p, t), (t0, f.τ_all))
+    traj = heun_fill(x0, h, (p, t) -> total_force(f, p, t), (t0, τ))
     workheat = get_workheat(traj, f, h.step)
     Configuration(traj, workheat)
 end

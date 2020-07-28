@@ -2,7 +2,7 @@ import Zygote
 
 abstract type AbstractForce end
 
-function potential(f::AbstractForce, x::Real, t::Real)::Real end
+function potential(f::AbstractForce, x::Real, t::Real) end
 
 function total_force(f::AbstractForce, x::Real, t::Real)::Real
     @debug "You are using AD"
