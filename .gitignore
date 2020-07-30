@@ -122,3 +122,5 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/julia,linux,macos,windows,visualstudiocode,jupyternotebooks
 
 *.png
+
+/local_test/*
